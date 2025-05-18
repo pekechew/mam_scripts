@@ -11,6 +11,16 @@ and automatically adds it to **qBittorrent** using qbittorrent-cli's [qbt](https
 * [`qbittorrent-cli`](https://github.com/ludviglundgren/qbittorrent-cli) (qbt) to add the torrent to qBittorrent
 * [`Mediainfo`](https://github.com/MediaArea/MediaInfo) to output bitrate and length info
 
+## Installation
+
+```bash
+mkdir /opt/MAM/
+cd /opt/MAM
+wget https://raw.githubusercontent.com/pekechew/mam_scripts/refs/heads/main/create_mam_torrent/create_mam_torrent.sh
+chmod +x create_mam_torrent.sh
+nano create_mam_torrent.sh
+```
+
 ## Config
 
 Update the configuration at the beginning of the script
@@ -23,22 +33,6 @@ PRIVATE=true                              # mark torrent private (no DHT/PEX)
 OUTPUT_DIR="/data/torrents"               # where .torrent files are stored
 CATEGORY="archive"                        # Script uses categories to set the torrent path
 QBT_BIN="/opt/qbittorrent-cli/qbt"        # path to the qbt executable
-```
-
-## Usage
-
-```bash
-./create_mam_torrent.sh [-c|-m] /full/path/to/file_or_folder
-```
-
-*   `-c`:  Automatically copy files to the qBittorrent category folder when their original path doesn’t match.
-*   `-m`:  Automatically move files to the qBittorrent category folder when their original path doesn’t match.
-
-**Example:**
-
-```bash
-./create_mam_torrent.sh -c /mnt/media/Audiobooks/The_Adventures_of_Tom_Sawyer
-./create_mam_torrent.sh -m /mnt/media/eBooks/The_Anarchist_Cookbook.pdf
 ```
 
 ## Prereqs
@@ -72,6 +66,23 @@ Before running this script, ensure the following dependencies are installed and 
     *   Navigate to **Options -> Downloads**.
     *   Ensure **"Use Category paths in Manual Mode"** is checked.
     *   Create category(s) with a path for the torrent data to seed from
+
+## Usage
+
+```bash
+./create_mam_torrent.sh [-c|-m] /full/path/to/file_or_folder
+```
+
+*   `-c`:  Automatically copy files to the qBittorrent category folder when their original path doesn’t match.
+*   `-m`:  Automatically move files to the qBittorrent category folder when their original path doesn’t match.
+
+**Example:**
+
+```bash
+./create_mam_torrent.sh -c /mnt/media/Audiobooks/The_Adventures_of_Tom_Sawyer
+./create_mam_torrent.sh -m /mnt/media/eBooks/The_Anarchist_Cookbook.pdf
+```
+
 
 ## Output
 
