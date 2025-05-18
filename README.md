@@ -1,4 +1,4 @@
-# qBit_MAM_Deleted Script
+# qBit_MAM_Deleted.py
 
 This script is useful when running autobrr to grab new releases that get nuked shortly after for various reasons, or when seeding old torrents that get removed when it's discovered that they broke some rule.
 
