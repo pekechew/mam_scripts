@@ -1,4 +1,4 @@
-# qBit-MAM-Deleted Script
+# qBit_MAM_Deleted Script
 
 This script is useful when running autobrr to grab new releases that get nuked shortly after for various reasons, or when seeding old torrents that get removed when it's discovered that they broke some rule.
 
@@ -24,18 +24,18 @@ Optionally, it can also stop or delete the torrent, with another option to also 
     ```
 2.  Create and open the script file for editing:
     ```bash
-    nano /opt/MAM/qbit-mam-deleted.py
+    nano /opt/MAM/qbit_mam_deleted.py
     ```
 3.  Paste the script content into the file.
 4.  **Important:** Change the configuration variables at the start of the script to match your setup.
 5.  Save and exit the editor (`CTRL+X`, then `Y`, then `ENTER`).
 6.  Make the script executable:
     ```bash
-    chmod +x /opt/MAM/qbit-mam-deleted.py
+    chmod +x /opt/MAM/qbit_mam_deleted.py
     ```
 7.  Run the script to test (it will use defaults or settings from the script):
     ```bash
-    ./qbit-mam-deleted.py
+    ./qbit_mam_deleted.py
     ```
 
 ## Options
@@ -78,17 +78,17 @@ These options can only be used via the command line.
     * Sends an ntfy notification if any are tagged.
     * Doesn't delete anything.
     ```bash
-    python3 qbit-mam-deleted.py
+    python3 qbit_mam_deleted.py
     ```
     or
     ```bash
-    ./qbit-mam-deleted.py
+    ./qbit_mam_deleted.py
     ```
 
 * **Tag and delete torrent AND files from qBittorrent / the hard drive**
     * Use `--delete` to only delete the torrent and keep the data.
     ```bash
-    ./qbit-mam-deleted.py --delete-data
+    ./qbit_mam_deleted.py --delete-data
     ```
 
 * **Find all torrents with:**
@@ -97,17 +97,17 @@ These options can only be used via the command line.
     * A tag of `mam`.
     * Then add the tag `deleted` to it, creating the tag if it doesn't exist.
     ```bash
-    ./qbit-mam-deleted.py --status Stalled,Seeding --category archive --filter-tag mam --tag deleted
+    ./qbit_mam_deleted.py --status Stalled,Seeding --category archive --filter-tag mam --tag deleted
     ```
 
 * **Test only the ntfy function to verify configuration**
     ```bash
-    ./qbit-mam-deleted.py --test-ntfy
+    ./qbit_mam_deleted.py --test-ntfy
     ```
 
 * **Don't send an ntfy notification**
     ```bash
-    ./qbit-mam-deleted.py --no-ntfy
+    ./qbit_mam_deleted.py --no-ntfy
     ```
 
 ## Run the script daily
@@ -121,6 +121,6 @@ You can schedule the script to run automatically using `cron`.
 2.  Add a line to schedule the script. For example, to run at 6:00 AM every day and save a log:
     ```cron
     # Run at 6:00 am everyday and save a log
-    0 6 * * * /usr/bin/python3 /opt/MAM/qbit-mam-deleted.py >> /var/log/qbit-mam-deleted.log 2>&1
+    0 6 * * * /usr/bin/python3 /opt/MAM/qbit_mam_deleted.py >> /var/log/qbit_mam_deleted.log 2>&1
     ```
     Adjust the path to `python3` and the script if necessary.
