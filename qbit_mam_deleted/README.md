@@ -1,4 +1,4 @@
-# qBit_MAM_Deleted.py
+# qbit_mam_deleted.py
 
 This script is useful when running autobrr to grab new releases that get nuked shortly after for various reasons, or when seeding old torrents that get removed when it's discovered that they broke some rule.
 
@@ -18,22 +18,17 @@ Optionally, it can also stop or delete the torrent, with another option to also 
 
 ## Install on Linux
 
-1.  Create the directory:
+1.  Create the directory, download the script and open it:
     ```bash
     mkdir /opt/MAM
+    cd /opt/MAM
+    wget https://raw.githubusercontent.com/pekechew/mam_scripts/refs/heads/main/qbit_mam_deleted/qbit_mam_deleted.py
+    chmod +x qbit_mam_deleted.py
+    nano qbit_mam_deleted.py
     ```
-2.  Create and open the script file for editing:
-    ```bash
-    nano /opt/MAM/qbit_mam_deleted.py
-    ```
-3.  Paste the script content into the file.
-4.  **Important:** Change the configuration variables at the start of the script to match your setup.
-5.  Save and exit the editor (`CTRL+X`, then `Y`, then `ENTER`).
-6.  Make the script executable:
-    ```bash
-    chmod +x /opt/MAM/qbit_mam_deleted.py
-    ```
-7.  Run the script to test (it will use defaults or settings from the script):
+2.  **Important:** Change the configuration variables at the start of the script to match your setup.
+3.  Save and exit the editor (`CTRL+X`, then `Y`, then `ENTER`).
+4.  Run the script to test (it will use defaults or settings from the script):
     ```bash
     ./qbit_mam_deleted.py
     ```
